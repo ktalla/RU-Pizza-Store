@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<!--Constructs the Build Your Own user interface-->
+<!--@author Ishani Mhatre-->
+<!--@author Keerthana Talla-->
+<?import javafx.scene.control.CheckBox?>
+<AnchorPane fx:id="anchorPane" prefHeight="900.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxproject.BuildYourOwnController">
+    <children>
+        <Label layoutX="145.0" layoutY="5.0" text="Build Your Own Pizza">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="Toppings" text="Choose 3-7 toppings." layoutX="250.0" layoutY="30.0"/>
+        <CheckBox fx:id="sausageCheckBox" text="Sausage" layoutX="250.0" layoutY="50.0" onAction="#handlePizzaSelection"/>
+        <CheckBox fx:id="pepperoniCheckBox" text="Pepperoni" layoutX="250.0" layoutY="80.0" onAction="#handlePizzaSelection"/>
+        <CheckBox fx:id="greenPepperCheckBox" text="Green Pepper" layoutX="250.0" layoutY="110.0" onAction="#handlePizzaSelection"/>
+        <CheckBox fx:id="onionCheckBox" text="Onion" layoutX="250.0" layoutY="140.0" onAction="#handlePizzaSelection"/>
+        <CheckBox fx:id="mushroomCheckBox" text="Mushroom" layoutX="250.0" layoutY="170.0" onAction="#handlePizzaSelection"/>
+        <CheckBox fx:id="hamCheckBox" text="Ham" layoutX="250.0" layoutY="200.0" onAction="#handlePizzaSelection"/>
+        <CheckBox fx:id="blackOliveCheckBox" text="Black Olive" layoutX="250.0" layoutY="230.0" onAction="#handlePizzaSelection"/>
+        <CheckBox fx:id="beefCheckBox" text="Beef" layoutX="250.0" layoutY="260.0" onAction="#handlePizzaSelection"/>
+        <CheckBox fx:id="shrimpCheckBox" text="Shrimp" layoutX="250.0" layoutY="290.0" onAction="#handlePizzaSelection"/>
+        <CheckBox fx:id="squidCheckBox" text="Squid" layoutX="250.0" layoutY="320.0" onAction="#handlePizzaSelection"/>
+        <CheckBox fx:id="crabMeatCheckBox" text="Crab Meat" layoutX="250.0" layoutY="350.0" onAction="#handlePizzaSelection"/>
+        <CheckBox fx:id="jalapenosCheckBox" text="Jalapenos" layoutX="250.0" layoutY="380.0" onAction="#handlePizzaSelection"/>
+        <CheckBox fx:id="baconCheckBox" text="Bacon" layoutX="250.0" layoutY="410.0" onAction="#handlePizzaSelection"/>
+
+        <HBox layoutX="25.0" layoutY="100.0" prefHeight="30.0" prefWidth="200.0">
+            <RadioButton mnemonicParsing="false" onAction="#setSize" selected="true" text="Small">
+                <toggleGroup>
+                    <ToggleGroup fx:id="size" />
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" onAction="#setSize" text="Medium" toggleGroup="$size" />
+            <RadioButton mnemonicParsing="false" onAction="#setSize" text="Large" toggleGroup="$size" />
+        </HBox>
+        <HBox layoutX="25.0" layoutY="140.0" prefHeight="20.0" prefWidth="200.0">
+            <children>
+                <RadioButton mnemonicParsing="false" onAction="#setSauce" selected="true" text="tomato">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="sauce" />
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton mnemonicParsing="false" onAction="#setSauce" text="alfredo" toggleGroup="$sauce" />
+            </children>
+        </HBox>
+        <HBox layoutX="25.0" layoutY="180.0" prefHeight="20.0" prefWidth="200.0">
+            <children>
+                <CheckBox fx:id="extraCheeseCheckbox" text="Extra Cheese" layoutX="20.0" layoutY="20.0" onAction="#setExtraCheese"/>
+                <CheckBox fx:id="extraSauceCheckbox" text="Extra Sauce" layoutX="20.0" layoutY="50.0" onAction="#setExtraSauce"/>
+            </children>
+        </HBox>
+
+        <HBox layoutX="25.0" layoutY="220.0" prefHeight="30.0" prefWidth="200.0">
+            <children>
+                <Label prefHeight="42.0" prefWidth="41.0" text="Price:" />
+                <TextField fx:id="price" editable="false" />
+            </children>
+        </HBox>
+        <Button fx:id="placeOrder" layoutX="200.0" layoutY="450.0" mnemonicParsing="false" onAction="#addToOrder" text="Place Order" />
+    </children>
+</AnchorPane>
